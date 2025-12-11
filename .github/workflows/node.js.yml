@@ -1,8 +1,10 @@
 name: Main pipeline
 
 on:
-  push: ["main"]
-  pull_request: ["main"]
+  push:
+    branches: ["main"]
+  pull_request: 
+    branches: ["main"]
 
 jobs:
   build:
@@ -34,4 +36,3 @@ jobs:
 
       - name: Run custom script
         run: npm run dev  
-6
