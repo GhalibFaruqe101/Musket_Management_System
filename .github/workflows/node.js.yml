@@ -23,6 +23,7 @@ jobs:
 
       - name: Install dependencies 
         run: npm ci
+        working-directory: musket
         
       - name: Run Linter
         run: npm run lint
