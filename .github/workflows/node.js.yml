@@ -27,7 +27,9 @@ jobs:
         
       - name: Run Linter
         run: npm run lint
+        working-directory: musket
 
 
       - name: Run custom script
         run: npm run dev  
+        working-directory: musket
