@@ -31,5 +31,5 @@ jobs:
 
 
       - name: Run custom script
-        run: npm run dev  
+        run: npm run build  
         working-directory: musket
