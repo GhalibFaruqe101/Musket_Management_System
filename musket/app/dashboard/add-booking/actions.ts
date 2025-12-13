@@ -18,7 +18,8 @@ function formatTime(time: string): string {
     return `${hourFormatted}:${minute} ${ampm}`;
 }
 
-export async function createBooking(prevState: any, formData: FormData) {
+
+export async function createBooking(prevState: unknown, formData: FormData) {
     const name = formData.get("name") as string;
     const email = formData.get("email") as string;
     const phone = formData.get("phone") as string;
@@ -98,9 +99,13 @@ export async function createBooking(prevState: any, formData: FormData) {
             });
         }
 
-    } catch (error: any) {
+    } catch (error: unknown) {
         console.error("Failed to create booking:", error);
-        return { message: `Error: ${error.message}` };
+        let errorMessage = "An unexpected error occurred.";
+        if (error instanceof Error) {
+            errorMessage = error.message;
+        }
+        return { message: `Error: ${errorMessage}` };
     }
 
     revalidatePath("/dashboard");
