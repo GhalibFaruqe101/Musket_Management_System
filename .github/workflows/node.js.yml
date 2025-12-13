@@ -30,6 +30,7 @@ jobs:
 
       - name: Generate Prisma client
         run: npx prisma generate
+        working-directory: musket
         
       - name: Run Linter
         run: npm run lint
