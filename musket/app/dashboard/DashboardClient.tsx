@@ -89,7 +89,7 @@ export default function DashboardClient({ slots, users }: DashboardClientProps) 
                 </div>
                 <div className="stat-card">
                     <span className="stat-title">Total Revenue</span>
-                    <span className="stat-value">${stats.totalRevenue.toLocaleString()}</span>
+                    <span className="stat-value">৳{stats.totalRevenue.toLocaleString()}</span>
                     <span className="stat-trend trend-up">+12% from last week</span>
                 </div>
             </section>
